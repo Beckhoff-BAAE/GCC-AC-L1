@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="FindYoungest" Id="{0162a207-dc78-4efd-890e-9b28f4e5f3ea}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION FindYoungest : myPersonType
+VAR_INPUT
+	ListOfEmplyees:myEmployees;
+END_VAR
+VAR
+	i: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[FindYoungest:=ListOfEmplyees[1];
+FOR	i:=2	TO	SIZEOF(ListOfEmplyees)/SIZEOF(myPersonType)	DO
+	IF	ListOfEmplyees[i].age>0	THEN
+		IF	ListOfEmplyees[i].age<FindYoungest.age	THEN
+			FindYoungest:=ListOfEmplyees[i];
+		END_IF
+	END_IF
+END_FOR]]></ST>
+    </Implementation>
+    <LineIds Name="FindYoungest">
+      <LineId Id="9" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="14" Count="1" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="10" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

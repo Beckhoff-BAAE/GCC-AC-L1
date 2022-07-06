@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="myEmployees" Id="{586a2543-cfe2-454a-aee0-3a9edfee8db5}">
+    <Declaration><![CDATA[//Alias is a nickname given to type declaration
+TYPE myEmployees : ARRAY[1..30] OF myPersonType; END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

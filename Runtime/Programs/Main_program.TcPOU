@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="Main_program" Id="{84923fc2-41a0-4393-8135-0ea7028661b1}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Main_program
+VAR
+//	gate:BOOL;
+	//person1
+//	age1:INT;
+//	name1:STRING;
+//	gendre1:INT;//male:=0,female:=1
+	
+//	//person2
+//	age2:INT;
+//	name2:STRING;
+//	gendre2:INT;//male:=0,female:=1
+	
+//	age:ARRAY[1..10]	OF	INT;
+//	name:ARRAY[1..10]	OF	STRING;
+//	gendre:ARRAY[1..10]	OF	INT;//male:=0,female:=1
+//	employee:myPersonType;
+	
+//	employees:ARRAY[1..20]	OF	myPersonType;
+	employees:myEmployees;
+	Oldest,
+	Youngest:myPersonType;
+	i: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+//name1:='Arsham';
+//age1:=36;
+//gendre1:=0;
+
+//IF gate=TRUE	THEN
+//	name1:='Mashra';
+//	age1:=37;
+//END_IF
+
+
+//name2:='ahmed';
+//age2:=20;
+//gendre2:=0;
+
+//IF	i=1	THEN
+//	name[i]:='Maria';
+//	age[i]:=10;
+//	gendre[i]:=1;
+//ELSIF	i=2	THEN
+//	name[i]:='Bob';
+//	age[i]:=12;
+//	gendre[i]:=0;
+//ELSIF	i=3	THEN
+//	name[i]:='David';
+//	age[i]:=13;
+//	gendre[i]:=0;
+//ELSIF	i=4	THEN
+//	name[i]:='Mariam';
+//	age[i]:=114;
+//	gendre[i]:=1;
+//ELSE
+//	;
+//END_IF
+
+//employee.name:='';
+//employee.age:=19;
+//employee.gendre:=0;
+
+//IF	i=1	THEN
+//	employees[i].name:='Maria';
+//	employees[i].age:=10;
+//	employees[i].gendre:=myGenderType.female;
+//ELSIF	i=2	THEN
+//	employees[i].name:='Bob';
+//	employees[i].age:=12;
+//	employees[i].gendre:=myGenderType.male;
+//ELSIF	i=3	THEN
+//	employees[i].name:='David';
+//	employees[i].age:=13;
+//	employees[i].gendre:=myGenderType.male;
+//ELSIF	i=4	THEN
+//	employees[i].name:='Mariam';
+//	employees[i].age:=16;
+//	employees[i].gendre:=myGenderType.female;
+//ELSE
+//	;
+//END_IF
+FOR	i:=1	TO	SIZEOF(employees)/SIZEOF(myPersonType)	DO
+	CASE	i	OF
+		1:
+			employees[i].name:='Maria';
+			employees[i].age:=10;
+			employees[i].gendre:=myGenderType.female;
+		2:;
+			employees[i].name:='Bob';
+			employees[i].age:=12;
+			employees[i].gendre:=myGenderType.male;
+		3:;
+			employees[i].name:='David';
+			employees[i].age:=13;
+			employees[i].gendre:=myGenderType.male;
+		4:;
+			employees[i].name:='Mariam';
+			employees[i].age:=16;
+			employees[i].gendre:=myGenderType.female;
+		6,7:;
+			employees[i].name:='Eliza';
+			employees[i].age:=22;
+			employees[i].gendre:=myGenderType.female;
+		5,29:
+//			employees[i].name:='Gawaher';
+//			employees[i].age:=3;
+//			employees[i].gendre:=myGenderType.female;
+		20:;
+		ELSE
+			employees[i].name:='';
+			employees[i].age:=0;
+			employees[i].gendre:=myGenderType.unknown;
+	END_CASE
+END_FOR
+
+
+Youngest:=	FindYoungest	(ListOfEmplyees:=employees);
+Oldest:=	FindOldest		(ListOfEmplyees:=employees);
+]]></ST>
+    </Implementation>
+    <LineIds Name="Main_program">
+      <LineId Id="13" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="29" Count="1" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="32" Count="1" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="47" Count="10" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="102" Count="2" />
+      <LineId Id="78" Count="19" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="138" Count="21" />
+      <LineId Id="171" Count="2" />
+      <LineId Id="169" Count="1" />
+      <LineId Id="160" Count="4" />
+      <LineId Id="137" Count="0" />
+      <LineId Id="166" Count="1" />
+      <LineId Id="165" Count="0" />
+      <LineId Id="175" Count="0" />
+      <LineId Id="168" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
