@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <DUT Name="FunctionBlockStates" Id="{cbf1dec8-e799-4afa-9ac2-def59f16ac73}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE FunctionBlockStates :
+(
+	Idle:=0,//Idle
+	Busy:=10,//Busy
+	Done:=20,//Done
+	Error:=30//Error0
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

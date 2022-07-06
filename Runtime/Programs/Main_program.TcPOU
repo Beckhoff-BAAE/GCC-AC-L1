@@ -24,6 +24,8 @@ VAR
 	Oldest,
 	Youngest:myPersonType;
 	i: INT;
+	
+	LightDancer:FB_LightDancer;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -122,6 +124,31 @@ END_FOR
 
 Youngest:=	FindYoungest	(ListOfEmplyees:=employees);
 Oldest:=	FindOldest		(ListOfEmplyees:=employees);
+
+//press F2 to open quick insertion dialogue
+//select instances and inser LightDancer
+LightDancer(
+	Execute:= GVL.DigIn[1], 
+	Terminate:=GVL.DigIn[4],
+	Done=> , 
+	Busy=> , 
+	Error=> , 
+	Light=> );
+
+	
+gvl.DigOut1[1]:= LightDancer.Light[1];
+gvl.DigOut1[2]:= LightDancer.Light[2];
+gvl.DigOut1[3]:= LightDancer.Light[3];
+gvl.DigOut1[4]:= LightDancer.Light[4];
+
+gvl.DigOut2[1]:= LightDancer.Light[5];
+gvl.DigOut2[2]:= LightDancer.Light[6];
+
+gvl.DigOut3[1]:= LightDancer.Light[7];
+gvl.DigOut3[2]:= LightDancer.Light[8];
+
+gvl.DigOut4[1]:= LightDancer.Light[9];
+
 ]]></ST>
     </Implementation>
     <LineIds Name="Main_program">
@@ -158,6 +185,24 @@ Oldest:=	FindOldest		(ListOfEmplyees:=employees);
       <LineId Id="166" Count="1" />
       <LineId Id="165" Count="0" />
       <LineId Id="175" Count="0" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="177" Count="0" />
+      <LineId Id="188" Count="0" />
+      <LineId Id="183" Count="1" />
+      <LineId Id="210" Count="0" />
+      <LineId Id="185" Count="2" />
+      <LineId Id="180" Count="0" />
+      <LineId Id="192" Count="0" />
+      <LineId Id="190" Count="1" />
+      <LineId Id="193" Count="2" />
+      <LineId Id="200" Count="0" />
+      <LineId Id="197" Count="1" />
+      <LineId Id="208" Count="0" />
+      <LineId Id="199" Count="0" />
+      <LineId Id="204" Count="0" />
+      <LineId Id="209" Count="0" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="179" Count="0" />
       <LineId Id="168" Count="0" />
     </LineIds>
   </POU>

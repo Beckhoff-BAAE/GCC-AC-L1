@@ -17,16 +17,26 @@
     <LibraryReferences>{901a3004-687f-4a7d-8f10-15507fc4318f}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Function Blocks\FB_LightDancer.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Functions\FindYoungest.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Functions\FindOldest.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Global Variables\GVL.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Programs\Main_program.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserTypes\FunctionBlockStates.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UserTypes\myEmployees.TcDUT">
@@ -61,6 +71,7 @@
   <ItemGroup>
     <Folder Include="Function Blocks" />
     <Folder Include="Functions" />
+    <Folder Include="Global Variables" />
     <Folder Include="UserTypes" />
     <Folder Include="Programs" />
   </ItemGroup>
